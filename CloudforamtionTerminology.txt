@@ -1,0 +1,11 @@
+# Information needed for CloudFormationStack
+
+AWSTemplateFormatVersion : version_date | 2010-09-09                                | Optional
+Description              : string                                                   | Optional
+Metadata                 : addiotnal Information about the template                 |  Optional
+Parameter                : Pass values into template at runtime                     |  Optional
+Mappings                 : Set of key/values pair as a lookup table                 |  Optional     
+Conditions               : place Conditions if certian resources are created        | Optional
+Transform                : Ex. External snippets into the template                  | Optional
+Resources                : Main, required Section , Stack resources and properties  | Mandatory
+Output                   : returen values from Stack                                | Optional

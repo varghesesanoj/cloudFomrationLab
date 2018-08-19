@@ -1,0 +1,21 @@
+Resources:
+  MyEC2Instance: # Logical Id, used for reference , ca n be any anme
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId:  ami-b70554c8
+      Tags:
+        - Key: Name
+          #Value: SimpleStackTest
+          Value: !Join [" ",[ EC2, Instance, with, Fn, Join ]] # IntrinsicFunction
+      SecurityGroups:
+        - !Ref MySecurityGroup #Reference Function for SecurityGroup
+  MySecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH access via 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
